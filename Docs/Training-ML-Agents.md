@@ -6,7 +6,7 @@
 
 ## Training with mlagents-learn
 
-Use the `mlagents-learn` command to train agents. See ([Python Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md)) if not yet installed.
+Use the `mlagents-learn` command to train agents. See ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md)) if not yet installed.
 
 Open the Unity Editor, this will be required when a training session is opened.
 
