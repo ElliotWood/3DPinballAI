@@ -13,7 +13,7 @@ training intelligent agents to play pinball without supervision.
 ## Prerequistes
 - Download and install (['3D Space Cadet Pinball'](https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/))
 - Download and install ([Unity (2019.2.10f1)](https://unity3d.com/get-unity/download))
-- Setup a ([Python Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md))
+- Setup a ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md))
 
 ## Training the PinballAgents
 - Setup a ([training session](Docs/Training-ML-Agents.md))
