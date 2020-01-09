@@ -29,7 +29,7 @@ To change a display scaling size using the recommended settings, use these steps
 2. Click on System.
 3. Click on Display.
 4. Under the "Scale and layout" section, use the drop-down menu and select the 100% scale setting.
-<img src="Assets/Screenshot/change-scaling-settings-windos-10.jpg" align="middle" width="1183"/>
+<img src="Docs/change-scaling-settings-windos-10.jpg" align="middle" width="1183"/>
 
 
 ## Additional Resources
