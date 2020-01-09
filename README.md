@@ -44,7 +44,7 @@ To change a display scaling size using the recommended settings, use these steps
 ## Community and Feedback
 
 This is an open-source project and we encourage and welcome
-contributions. Please add detail when submiting new feature branches.
+contributions. Please add detail when submitting new feature branches.
 
 If you run into any problems using this project,
 [submit an issue](https://github.com/ElliotWood/3DPinballAI/issues) and
