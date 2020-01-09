@@ -22,7 +22,7 @@ The Pinball agent is rewarded by the score going up, and all actions and frames 
 
 ## The code
 - The brain ([Pinball Agent](Assets/Scripts/PinballAgent.cs)) implemented in .Net
-- The eyes ([Extenal Window Manager](Assets/Scripts/ExtenalWindowManager.cs)) used to screen capture external window, and send keys to it. You could say one eye watched the window frames and the other looks at the score.
+- The eyes ([External Window Manager](Assets/Scripts/ExternalWindowManager.cs)) used to screen capture external window, and send keys to it. You could say one eye watches the window frames and the other looks at the score.
 - The AI config ([trainer_config.yaml] Assets/Config/trainer_config.yaml) the unity ML agents training config.
 
 ## Limitation
