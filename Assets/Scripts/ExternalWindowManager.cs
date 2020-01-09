@@ -11,7 +11,7 @@ using System.Drawing;
 using Graphics = System.Drawing.Graphics;
 using System.Drawing.Imaging;
 
-public class ExtenalWindowManager : MonoBehaviour
+public class ExternalWindowManager : MonoBehaviour
 {
     private const int scoreWidth = 135;
     private const int scoreHeight = 22;

@@ -24,7 +24,7 @@ public class PinballAgent : Agent
             GameHasEnded = () =>
             {
                 //If ball is 0 then game is over
-                return (ExtenalWindowManager.Ball == 0);
+                return (ExternalWindowManager.Ball == 0);
             };
         }
         actionMask = new List<int>(new[] {
@@ -41,8 +41,8 @@ public class PinballAgent : Agent
 
     public override void CollectObservations()
     {
-        AddVectorObs(ExtenalWindowManager.Ball);
-        AddVectorObs(ExtenalWindowManager.Score);
+        AddVectorObs(ExternalWindowManager.Ball);
+        AddVectorObs(ExternalWindowManager.Score);
     }
 
     public override void AgentAction(float[] vectorAction)
@@ -58,32 +58,32 @@ public class PinballAgent : Agent
                 Debug.Log("Idle action");
                 break;
             case 1:
-                ExtenalWindowManager.PressKey('Z');
+                ExternalWindowManager.PressKey('Z');
                 actionMask.Add(1); //Disable Z press
                 try { actionMask.Remove(2); } catch { } // Try remove mask for action pair
                 break;
             case 2:
-                ExtenalWindowManager.PressKey('Z', true);
+                ExternalWindowManager.PressKey('Z', true);
                 actionMask.Add(2); //Disable Z relaease
                 try { actionMask.Remove(1); } catch { } // Try remove mask for action pair
                 break;
             case 3:
-                ExtenalWindowManager.PressKey('/');
+                ExternalWindowManager.PressKey('/');
                 actionMask.Add(3); //Disable / press
                 try { actionMask.Remove(4); } catch { } // Try remove mask for action pair
                 break;
             case 4:
-                ExtenalWindowManager.PressKey('/', true);
+                ExternalWindowManager.PressKey('/', true);
                 actionMask.Add(4); //Disable / relaease
                 try { actionMask.Remove(3); } catch { } // Try remove mask for action pair
                 break;
             case 5:
-                ExtenalWindowManager.PressKey(0x20); //space
+                ExternalWindowManager.PressKey(0x20); //space
                 actionMask.Add(5); //Disable SPACE relaease
                 try { actionMask.Remove(6); } catch { } // Try remove mask for action pair
                 break;
             case 6:
-                ExtenalWindowManager.PressKey(0x20, true); //space
+                ExternalWindowManager.PressKey(0x20, true); //space
                 actionMask.Add(6); //Disable SPACE relaease
                 try { actionMask.Remove(5); } catch { } // Try remove mask for action pair
                 break;
@@ -95,19 +95,19 @@ public class PinballAgent : Agent
 
         // Add rewards
         AddReward(0001.0f); //Stay alive benifit
-        AddReward(ExtenalWindowManager.Score); // Read the scoreboard
+        AddReward(ExternalWindowManager.Score); // Read the scoreboard
 
         // End game logic
         if (GameHasEnded())
         {
-            Debug.Log("Game Ended Score:" + ExtenalWindowManager.Score);
+            Debug.Log("Game Ended Score:" + ExternalWindowManager.Score);
             // Press F2 to start new game
-            ExtenalWindowManager.PressKey(0x71); //f2
-            ExtenalWindowManager.PressKey(0x71, true); //f2
+            ExternalWindowManager.PressKey(0x71); //f2
+            ExternalWindowManager.PressKey(0x71, true); //f2
 
             // If high score press enter
-            ExtenalWindowManager.PressKey(0x0D); //f2
-            ExtenalWindowManager.PressKey(0x0D, true); //f2
+            ExternalWindowManager.PressKey(0x0D); //f2
+            ExternalWindowManager.PressKey(0x0D, true); //f2
 
             Done();
         }
