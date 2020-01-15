@@ -34,7 +34,7 @@ VisualPinball:
     num_epoch: 3
     buffer_size: 1024
     batch_size: 32
-    max_steps: 5.0e5
+    max_steps: 5.0e7
     summary_freq: 1000
     time_horizon: 128
     reward_signals:

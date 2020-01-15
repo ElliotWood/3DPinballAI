@@ -15,6 +15,9 @@ public class PinballAgent : Agent
     public Func<bool> GameHasEnded;
     private List<int> actionMask;
 
+    private int previousBall = 0;
+    private long previousScore = 0;
+
     public override void InitializeAgent()
     {
         m_Academy = FindObjectOfType(typeof(PinballAcademy)) as PinballAcademy;
@@ -93,14 +96,52 @@ public class PinballAgent : Agent
         actionMask.Sort();
         SetActionMask(actionMask);
 
-        // Add rewards
-        AddReward(0001.0f); //Stay alive benifit
-        AddReward(ExternalWindowManager.Score); // Read the scoreboard
+        //// Add rewards
+        //1) Score
+        if (previousScore < ExternalWindowManager.Score) // Get the difference between last score (from last descision) and current score.
+        {
+            //Small Benifit score is going up. 
+            //Assume max score 999,999,999 however, each step max will only be a fraction of that.
+            AddReward(0.00001f * (ExternalWindowManager.Score - previousScore)); //Small 2k large 20k, not sure what largest bonus is but this will do.
+        }
+        else
+        {
+            //No score change add negative reward (aka punish);
+            AddReward(-0.00001f); //-0.00001f is a small negative but should encorage more activity
+        }
+        // Set previous score;
+        previousScore = ExternalWindowManager.Score;
 
+        //2) Ball
+        if (previousBall < ExternalWindowManager.Ball)
+        {
+            Debug.Log("Dropped Ball:" + previousBall);
+            if (previousBall != 0) // If we drop a ball thats is not game over or starting ball.
+            {
+                AddReward(-0.3f); //Droped the ball add negative reward (aka punish); -0.3 is pretty bad. Thats like 30k in points.
+            }
+
+            //reset keys
+            ResetKeys();
+        }
+
+        // Set previous score;
+        previousBall = ExternalWindowManager.Ball;
+        
+        //Monitor
+        Monitor.SetActive(true);
+        Monitor.Log("Reward:", GetReward().ToString());
+        Monitor.Log("Cumulative Reward:", GetCumulativeReward().ToString());
+
+        //// End a training episode
         // End game logic
         if (GameHasEnded())
         {
-            Debug.Log("Game Ended Score:" + ExternalWindowManager.Score);
+            // Reward the agent for end of round.
+            // I think this is confusing the training, I think use below OR use score step diff (line 103-110)
+            //SetReward(0.000000001f * ExternalWindowManager.Score); // Read the scoreboard. Assume max score 999,999,999
+            Debug.Log($"Game Ended Score: {ExternalWindowManager.Score} | Total Reward: {GetCumulativeReward().ToString()}");
+
             // Press F2 to start new game
             ExternalWindowManager.PressKey(0x71); //f2
             ExternalWindowManager.PressKey(0x71, true); //f2
@@ -109,30 +150,44 @@ public class PinballAgent : Agent
             ExternalWindowManager.PressKey(0x0D); //f2
             ExternalWindowManager.PressKey(0x0D, true); //f2
 
+            // Reset reward
+            previousScore = 0;
+            previousBall = 0;
+
+            //reset keys
+            ResetKeys();
+
+            // Tell agent to reset
             Done();
         }
     }
 
+    public void ResetKeys()
+    {
+        ExternalWindowManager.PressKey('Z', true);
+        ExternalWindowManager.PressKey('/', true);
+        ExternalWindowManager.PressKey(0x20, true); //space
+
+        actionMask = new List<int>(new[] {
+                0, //Disable Idle
+                //1, //Disable Z press
+                //2, //Disable z relaease
+                //3, //Disable / press
+                //4, //Disable / relaease
+                //5, //Disable Space press
+                //6, //Disable Space relaease 
+            });
+        SetActionMask(actionMask);
+    }
+
     public override void AgentReset()
     {
-        actionMask = new List<int>(new[] {
-            0, //Disable Idle
-            //1, //Disable Z press
-            //2, //Disable z relaease
-            //3, //Disable / press
-            //4, //Disable / relaease
-            //5, //Disable Space press
-            //6, //Disable Space relaease 
-        });
+
     }
 
     public override float[] Heuristic()
     {
         return new float[] { 0 };
-    }
-
-    public override void AgentOnDone()
-    {
     }
 
     public void FixedUpdate()
@@ -142,21 +197,22 @@ public class PinballAgent : Agent
 
     void WaitTimeInference()
     {
-        if (!m_Academy.GetIsInference())
+        //if (!m_Academy.GetIsInference())
+        //{
+
+        //    RequestDecision();
+        //}
+        //else
+        //{
+        if (m_TimeSinceDecision >= TimeBetweenDecisionsAtInference)
         {
+            m_TimeSinceDecision = 0f;
             RequestDecision();
         }
         else
         {
-            if (m_TimeSinceDecision >= TimeBetweenDecisionsAtInference)
-            {
-                m_TimeSinceDecision = 0f;
-                RequestDecision();
-            }
-            else
-            {
-                m_TimeSinceDecision += Time.fixedDeltaTime;
-            }
+            m_TimeSinceDecision += Time.fixedDeltaTime;
         }
+        //}
     }
 }

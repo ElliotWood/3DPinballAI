@@ -411,7 +411,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -468,9 +468,9 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
     resetOnDone: 1
-    onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 30
-  TimeBetweenDecisionsAtInference: 1
+    onDemandDecision: 1
+    numberOfActionsBetweenDecisions: 1
+  TimeBetweenDecisionsAtInference: 0.1
 --- !u!114 &1425927763
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,9 +24,11 @@ public class ExternalWindowManager : MonoBehaviour
 
     public static long Score => score;
     public static int Ball => ball;
+    public static bool IsActive => isActive;
 
     private static long score;
     private static int ball;
+    private static bool isActive;
 
     public string FilePath = @"C:\Program Files (x86)\Microsoft Games\Pinball\pinball.exe";
     public string WorkingDirectory = @"C:\Program Files (x86)\Microsoft Games\Pinball";
@@ -95,7 +97,8 @@ public class ExternalWindowManager : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.Log($"Found Window {width},{height}");
+            //Uncomment for debug
+            //UnityEngine.Debug.Log($"Found Window {width},{height}");
         }
 
         // Create Images in memory
@@ -151,7 +154,9 @@ public class ExternalWindowManager : MonoBehaviour
                 score += GetNumber(current, i * numberWidth);
             }
             ball = GetNumber(bmp, ballXOffset, ballYOffset);
-            UnityEngine.Debug.Log("Ball " + ball + ", Score " + score);
+
+            //Uncomment for debug
+            //UnityEngine.Debug.Log("Ball " + ball + ", Score " + score);
 
             lg.DrawImage(current, new Point(0, 0));
         }
@@ -355,7 +360,7 @@ public class ExternalWindowManager : MonoBehaviour
 
 
         public static IntPtr UnityWindow;
-        private static IntPtr corehWnd;
+        public static IntPtr corehWnd;
         private const int MAXTITLE = 255;
         private static string windowTitle;
 
