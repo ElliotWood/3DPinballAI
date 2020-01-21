@@ -52,3 +52,14 @@ Note:
  execute `python --version` to verify the version.
 - Python3 installation may require admin privileges on Windows.
 - This guide is for Windows 10 using a 64-bit architecture only.
+
+## Unity Setup
+BARRACUDA PACKAGE DEPENDENCY:
+
+ML-Agents version 0.12 takes a dependency on the "Barracuda" package in the Unity Package Manager. If you do not install this, ML-Agents will not work and you will get a lot of error messages.
+
+To fix this:
+1. In the top menu, go to "Window" > "Package Manager"
+1. Click "Advanced" and choose "Show preview packages"
+1. Find and click on the "Barracuda" package
+1. Click "Install" and allow the installation to complete
