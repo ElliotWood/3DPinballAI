@@ -15,10 +15,10 @@ different version.
 
 Requirement - Python 3.6 must be installed on the machine you would like
 to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6 can be
-installed from [here](https://www.python.org/downloads/).
+installed from [here](https://www.python.org/downloads/release/python-362/).
 
 ## Python Version Requirement (Required)
-This guide has been tested with Python 3.6 and 3.7. Python 3.8 is not supported at this time.
+This guide has been tested with [Python 3.6](https://www.python.org/downloads/release/python-362/). Python 3.7 and 3.8 is not supported at this time.
 
 ## Installing Pip (Required)
 
