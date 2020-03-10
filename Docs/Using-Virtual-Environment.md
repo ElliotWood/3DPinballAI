@@ -13,8 +13,8 @@ of other projects. This has a few advantages:
 spinning up a new environment and verifying the compatibility of the code with the
 different version.
 
-Requirement - Python 3.6 must be installed on the machine you would like
-to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6 can be
+Requirement - Python 3.6.2 must be installed on the machine you would like
+to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6.2 can be
 installed from [here](https://www.python.org/downloads/release/python-362/).
 
 ## Python Version Requirement (Required)
@@ -23,7 +23,7 @@ This guide has been tested with [Python 3.6](https://www.python.org/downloads/re
 ## Installing Pip (Required)
 
 1. Download the `get-pip.py` file using the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-1. Run the following `python3 get-pip.py`
+1. Run the following `python get-pip.py`
 1. Check pip version using `pip3 -V`
 
 ## Mac OS X Setup
