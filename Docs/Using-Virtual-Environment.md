@@ -26,9 +26,6 @@ This guide has been tested with [Python 3.6](https://www.python.org/downloads/re
 1. Run the following `python3 get-pip.py`
 1. Check pip version using `pip3 -V`
 
-Note (for Ubuntu users): If the `ModuleNotFoundError: No module named 'distutils.util'` error is encountered, then
-python3-distutils needs to be installed. Install python3-distutils using `sudo apt-get install python3-distutils`
-
 ## Mac OS X Setup
 
 No supported due to 3D Space Cadet Pinball not available.
