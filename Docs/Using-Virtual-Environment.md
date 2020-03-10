@@ -37,6 +37,7 @@ No supported due to 3D Space Cadet Pinball not available.
 
 ## Windows Setup
 
+1. Open Command Prompt with 'Run as Administrator' rights.
 1. Create a folder where the virtual environments will reside `md python-envs`
 1. To create a new environment named `pinball-env` execute `python -m venv python-envs\pinball-env`
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
