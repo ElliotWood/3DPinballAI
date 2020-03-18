@@ -52,6 +52,29 @@ Note:
 - Python3 installation may require admin privileges on Windows.
 - This guide is for Windows 10 using a 64-bit architecture only.
 
+### Troubleshooting
+
+We have occassionally observed the following issue when following the above setup steps:
+
+#### Updating PIP in the virtual environment throws exception
+
+You may get a `PermissionError: [WinError 5] Access is denied: <path to pip.exe>` when upgrading PIP from Step 5. 
+
+[![pip Permissions Error](./imgs/pip_error_sm.png)](./imgs/pip_error.png)
+
+Run the upgrade command again to verify that PIP has been successfully upgraded.
+
+
+#### Incompatible Setup Tools
+
+You may get an error when installing ml-agents `you'll have steuptools 28.8.0 which is incompatible` for multiple dependencies.
+
+[![Incompatible Packages Error](./imgs/Incompatible_Packages_sm.png)](./imgs/Incompatible_Packages.png)
+
+This is a dependency issue higher up the chain than ml-agents and will not affect operation.
+
+
+
 ## Unity Setup
 BARRACUDA PACKAGE DEPENDENCY:
 
