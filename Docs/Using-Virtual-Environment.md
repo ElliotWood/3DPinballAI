@@ -71,7 +71,7 @@ You may get an error when installing ml-agents `you'll have steuptools 28.8.0 wh
 
 [![Incompatible Packages Error](./imgs/Incompatible_Packages_sm.png)](./imgs/Incompatible_Packages.png)
 
-This menas that you likely have installed a version of MLAgents newer than version `0.12.0`. Ensure that you have specifed the correct version of ml-agents to be installed.
+This means that you likely have installed a version of MLAgents newer than version `0.12.0`. Ensure that you have specifed the correct version of ml-agents to be installed.
 
 
 
