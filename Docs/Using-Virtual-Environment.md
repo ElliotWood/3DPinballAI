@@ -43,7 +43,7 @@ No supported due to 3D Space Cadet Pinball not available.
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
 1. Verify pip version is the same as in the __Installing Pip__ section. In case it is not the
 latest, upgrade to the latest pip version using `pip install --upgrade pip`
-1. Install ML-Agents package using `pip install mlagents`
+1. Install ML-Agents package using `pip install mlagents==0.12.0`
 1. To deactivate the environment execute `deactivate`
 
 Note:
