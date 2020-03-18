@@ -83,5 +83,5 @@ ML-Agents version 0.12 takes a dependency on the "Barracuda" package in the Unit
 To fix this:
 1. In the top menu, go to "Window" > "Package Manager"
 1. Click "Advanced" and choose "Show preview packages"
-1. Find and click on the "Barracuda" package
+1. Find and click on the "Barracuda" package 0.3.2
 1. Click "Install" and allow the installation to complete
