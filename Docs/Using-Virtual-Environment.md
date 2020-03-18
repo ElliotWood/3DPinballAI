@@ -43,7 +43,7 @@ No supported due to 3D Space Cadet Pinball not available.
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
 1. Verify pip version is the same as in the __Installing Pip__ section. In case it is not the
 latest, upgrade to the latest pip version using `pip install --upgrade pip`
-1. Install ML-Agents package using `pip install mlagents`
+1. Install ML-Agents package using `pip install mlagents==0.12.0`
 1. To deactivate the environment execute `deactivate`
 
 Note:
@@ -71,7 +71,7 @@ You may get an error when installing ml-agents `you'll have steuptools 28.8.0 wh
 
 [![Incompatible Packages Error](./imgs/Incompatible_Packages_sm.png)](./imgs/Incompatible_Packages.png)
 
-This is a dependency issue higher up the chain than ml-agents and will not affect operation.
+This means that you likely have installed a version of MLAgents newer than version `0.12.0`. Ensure that you have specifed the correct version of ml-agents to be installed.
 
 
 
