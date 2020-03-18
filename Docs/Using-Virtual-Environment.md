@@ -13,9 +13,10 @@ of other projects. This has a few advantages:
 spinning up a new environment and verifying the compatibility of the code with the
 different version.
 
-Requirement - Python 3.6 must be installed on the machine you would like
-to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6 can be
+Requirement - Python 3.6.2 must be installed on the machine you would like
+to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6.2 can be
 installed from [here](https://www.python.org/downloads/release/python-362/).
+1. Add Python to Path Variable 
 
 ## Python Version Requirement (Required)
 This guide has been tested with [Python 3.6](https://www.python.org/downloads/release/python-362/). Python 3.7 and 3.8 is not supported at this time.
@@ -23,11 +24,8 @@ This guide has been tested with [Python 3.6](https://www.python.org/downloads/re
 ## Installing Pip (Required)
 
 1. Download the `get-pip.py` file using the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-1. Run the following `python3 get-pip.py`
+1. Run the following `python get-pip.py`
 1. Check pip version using `pip3 -V`
-
-Note (for Ubuntu users): If the `ModuleNotFoundError: No module named 'distutils.util'` error is encountered, then
-python3-distutils needs to be installed. Install python3-distutils using `sudo apt-get install python3-distutils`
 
 ## Mac OS X Setup
 
@@ -39,6 +37,7 @@ No supported due to 3D Space Cadet Pinball not available.
 
 ## Windows Setup
 
+1. Open Command Prompt with 'Run as Administrator' rights.
 1. Create a folder where the virtual environments will reside `md python-envs`
 1. To create a new environment named `pinball-env` execute `python -m venv python-envs\pinball-env`
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
@@ -52,6 +51,29 @@ Note:
  execute `python --version` to verify the version.
 - Python3 installation may require admin privileges on Windows.
 - This guide is for Windows 10 using a 64-bit architecture only.
+
+### Troubleshooting
+
+We have occassionally observed the following issue when following the above setup steps:
+
+#### Updating PIP in the virtual environment throws exception
+
+You may get a `PermissionError: [WinError 5] Access is denied: <path to pip.exe>` when upgrading PIP from Step 5. 
+
+[![pip Permissions Error](./imgs/pip_error_sm.png)](./imgs/pip_error.png)
+
+Run the upgrade command again to verify that PIP has been successfully upgraded.
+
+
+#### Incompatible Setup Tools
+
+You may get an error when installing ml-agents `you'll have steuptools 28.8.0 which is incompatible` for multiple dependencies.
+
+[![Incompatible Packages Error](./imgs/Incompatible_Packages_sm.png)](./imgs/Incompatible_Packages.png)
+
+This is a dependency issue higher up the chain than ml-agents and will not affect operation.
+
+
 
 ## Unity Setup
 BARRACUDA PACKAGE DEPENDENCY:
