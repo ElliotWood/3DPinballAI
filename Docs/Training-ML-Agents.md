@@ -23,6 +23,11 @@
 10. The 3D Pinball window needs to stay focused and in the foreground with no other windows overlapping it.
 11. Sit back and watch as the Training attempts to figure out how to play.
 
+You should end up with somthing that looks like this:
+
+[![View of the desktop when everything is running](./imgs/desktop_view_sm.png)](./imgs/desktop_view.png)
+
+
 ### Monitoring Training 
 
 During a training session, the training program prints out and saves updates at
