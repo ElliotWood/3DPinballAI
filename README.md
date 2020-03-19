@@ -43,7 +43,7 @@ To change a display scaling size using the recommended settings, use these steps
 
 
 ## Credit
-Initial conceptm and code developed by [Elliot Wood][elliotGithub]
+Initial concept and code developed by [Elliot Wood][elliotGithub]
 
 
 ## Community and Feedback
