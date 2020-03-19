@@ -1,5 +1,5 @@
 # 3D Pinball AI
-<img src="Docs/Pinball.png" align="middle" width="600"/>
+<img src="Docs/imgs/Pinball.png" align="middle" width="600"/>
 
 3D Space Cadet Pinball - Deep Reinforcement Learning is an open-source
 example of create an AI in .Net using ([Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)) and a game (['3D Space Cadet Pinball'](https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/)), to serve as a learning environment for
@@ -36,7 +36,7 @@ To change a display scaling size using the recommended settings, use these steps
 2. Click on System.
 3. Click on Display.
 4. Under the "Scale and layout" section, use the drop-down menu and select the 100% scale setting.
-<img src="Docs/change-scaling-settings-windos-10.jpg" align="middle" width="1183"/>
+<img src="Docs/imgs/change-scaling-settings-windos-10.jpg" align="middle" width="1183"/>
 
 ## Additional Resources
 * [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)
