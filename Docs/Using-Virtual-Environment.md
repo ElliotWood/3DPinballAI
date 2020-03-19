@@ -37,7 +37,7 @@ This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.
 3. Open your favourite terminal <sup>[1](#footnote1)</sup> and ensure that you have the right version of Python installed by running `python --version`. You should see "Python 3.6.2"
 
 ### __Install Pip__
-1. Open your favourite terminal[^1]
+1. Open your favourite terminal <sup>[1](#footnote1)</sup>
 1. Download the `get-pip.py` file using the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 1. Run the following `python get-pip.py`
 1. Check pip version using `pip -V`. you should see "pip 20.0.2"
