@@ -45,7 +45,8 @@ This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.
 
 ###  __Create Virtual Python Environment__
 
-1. Open your favourite terminal<sup>[1](#footnote1)</sup> as an Administrator <sup>[2](#footnote2)</sup>
+1. Open your favourite terminal<sup>[1](#footnote1)</sup> 
+<!-- as an Administrator <sup>[2](#footnote2)</sup> -->
 1. Create a folder where the virtual environments will reside `md python-envs`
 1. To create a new environment named `pinball-env` execute `python -m venv python-envs\pinball-env`
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
@@ -63,7 +64,7 @@ You're now ready to start [Training][training] the pinball machine.
 
 <a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]. 
 
-<a name="footnote2">2</a>: Right click and choose "Run as Administrator".
+<!-- <a name="footnote2">2</a>: Right click and choose "Run as Administrator". -->
 
 <a name="footnote3">3</a>: You must use version 0.12.0 of ML-Agents.
 
