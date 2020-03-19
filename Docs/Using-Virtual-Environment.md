@@ -58,29 +58,16 @@ This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.
 
 You're now ready to start [Training][training] the pinball machine.
 
-## Unity Setup
-BARRACUDA PACKAGE DEPENDENCY:
-
-ML-Agents version 0.12 takes a dependency on the "Barracuda" package in the Unity Package Manager. If you do not install this, ML-Agents will not work and you will get a lot of error messages.
-
-To fix this:
-1. In the top menu, go to "Window" > "Package Manager"
-1. Click "Advanced" and choose "Show preview packages"
-1. Find and click on the "Barracuda" package
-1. Click "Install" and allow the installation to complete
-
 <!-- Footnotes -->
 <hr/>
-<a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]
 
-<a name="footnote2">2</a>: Right click and choose "Run as Administrator"
+<a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]. 
 
-<a name="footnote3">3</a>: You must use version 0.12.0 of ML-Agents
+<a name="footnote2">2</a>: Right click and choose "Run as Administrator".
+
+<a name="footnote3">3</a>: You must use version 0.12.0 of ML-Agents.
 
 
-<!-- [^1]: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]
-[^2]: Right click and choose "Run as Administrator"
-[^3]: You must use version 0.12.0 of ML-Agents -->
 
 <!-- Links -->
 [pythonVirtualEnvironments]: https://docs.python.org/3/library/venv.html "Python Virtual Environments Documentation"
