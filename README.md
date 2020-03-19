@@ -14,6 +14,7 @@ The Pinball agent is rewarded by the score going up, and all actions and frames 
 ## Prerequistes
 - Download and install (['3D Space Cadet Pinball'][spaceCadetPinball])
 - Download and install ([Unity (2019.2.10f1)][unity])
+- Ensure [Baracuda Package Manager][barracuda] is installed in Unity
 - Setup a ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md))
 
 ## Training the PinballAgents
@@ -22,7 +23,7 @@ The Pinball agent is rewarded by the score going up, and all actions and frames 
 ## The code
 - The brain ([Pinball Agent](Assets/Scripts/PinballAgent.cs)) implemented in .Net
 - The eyes ([External Window Manager](Assets/Scripts/ExternalWindowManager.cs)) used to screen capture external window, and send keys to it. You could say one eye watches the window frames and the other looks at the score.
-- The AI config ([trainer_config.yaml] Assets/Config/trainer_config.yaml) the unity ML agents training config.
+- The AI config ([trainer_config.yaml](Assets/Config/trainer_config.yaml)) the unity ML agents training config.
 
 ## Limitation
 - The 3D Space Cadet Window must be in focus during training, with no windows overlapping it.
@@ -64,3 +65,4 @@ make sure to include as much detail as possible.
 [unityMlAgents]: https://github.com/Unity-Technologies/ml-agents "Unity ML Agents GitHub repo"
 [spaceCadetPinball]: https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/ "Space Cadet Pinball"
 [unity]: https://unity3d.com/get-unity/download "Download Unity"
+[barracuda]: ./Docs/barracuda.md "Barracuda package manager install instructions"
