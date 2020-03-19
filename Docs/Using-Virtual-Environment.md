@@ -34,7 +34,7 @@ This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.
 
 ![Python Advanced Options, Ensure "Add Python to Environment Variables" is checked](./imgs/python_advanced.png)
 
-3. Open your favourite terminal[^1] and ensure that you have the right version of Python installed by running `python --version`. You should see "Python 3.6.2"
+3. Open your favourite terminal <sup>[1](#footnote1)</sup> and ensure that you have the right version of Python installed by running `python --version`. You should see "Python 3.6.2"
 
 ### __Install Pip__
 1. Open your favourite terminal[^1]
@@ -45,20 +45,18 @@ This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.
 
 ###  __Create Virtual Python Environment__
 
-1. Open your favourite terminal[^1] as an Administrator[^2]
+1. Open your favourite terminal<sup>[1](#footnote1)</sup> as an Administrator <sup>[2](#footnote2)</sup>
 1. Create a folder where the virtual environments will reside `md python-envs`
 1. To create a new environment named `pinball-env` execute `python -m venv python-envs\pinball-env`
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
 1. Verify pip version is the same as in the __Install Pip__ section. 
     - If you don't have the latest pip in the virutal envornment, you can upgrade it by executing `python -m pip install --upgrade pip`
-1. Install ML-Agents package using `pip install mlagents==0.12.0`[^3]
+1. Install ML-Agents package using `pip install mlagents==0.12.0` <sup>[3](#footnote3)</sup>
 1. To deactivate the environment execute `deactivate`
 
 ## Finish
 
 You're now ready to start [Training][training] the pinball machine.
-
-
 
 ## Unity Setup
 BARRACUDA PACKAGE DEPENDENCY:
@@ -72,10 +70,17 @@ To fix this:
 1. Click "Install" and allow the installation to complete
 
 <!-- Footnotes -->
+<hr/>
+<a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]
 
-[^1]: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]
+<a name="footnote2">2</a>: Right click and choose "Run as Administrator"
+
+<a name="footnote3">3</a>: You must use version 0.12.0 of ML-Agents
+
+
+<!-- [^1]: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]
 [^2]: Right click and choose "Run as Administrator"
-[^3]: You must use version 0.12.0 of ML-Agents
+[^3]: You must use version 0.12.0 of ML-Agents -->
 
 <!-- Links -->
 [pythonVirtualEnvironments]: https://docs.python.org/3/library/venv.html "Python Virtual Environments Documentation"
