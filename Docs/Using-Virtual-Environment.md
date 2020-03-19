@@ -3,7 +3,7 @@
 ## What is a Virtual Environment?
 A Virtual Environment is a self contained directory tree that contains a Python installation
 for a particular version of Python, plus a number of additional packages. To learn more about
-Virtual Environments see [here](https://docs.python.org/3/library/venv.html)
+Virtual Environments see [here][pythonVirtualEnvironments]
 
 ## Why should I use a Virtual Environment?
 A Virtual Environment keeps all dependencies for the Python project separate from dependencies
@@ -15,73 +15,61 @@ different version.
 
 Requirement - Python 3.6.2 must be installed on the machine you would like
 to run ML-Agents on (either local laptop/desktop or remote server). Python 3.6.2 can be
-installed from [here](https://www.python.org/downloads/release/python-362/).
-1. Add Python to Path Variable 
+installed from [here][pythonDownload]).
 
-## Python Version Requirement (Required)
-This guide has been tested with [Python 3.6](https://www.python.org/downloads/release/python-362/). Python 3.7 and 3.8 is not supported at this time.
 
-## Installing Pip (Required)
+## Requirements
 
+### __Note__
+- The instructions are applied to a Windows machine only, since we're setting up for Space Cadent Pinball which doesn't work on other platforms.
+- This guide is for Windows 10 using a 64-bit architecture only. 
+
+### __Install Python__
+This guide has been tested with [Python 3.6][pythonDownload]. (Python 3.7 and 3.8 is not supported at this time.)
+
+1. Using the Web Installer for Python is the easiest way to get Python 3.6 installed.
+1. You should use the following installer options for this project (if you're unsure)
+
+![Python Optional Features, Select "py launcher", ignore everything else](./imgs/python_optional.png)
+
+![Python Advanced Options, Ensure "Add Python to Environment Variables" is checked](./imgs/python_advanced.png)
+
+3. Open your favourite terminal <sup>[1](#footnote1)</sup> and ensure that you have the right version of Python installed by running `python --version`. You should see "Python 3.6.2"
+
+### __Install Pip__
+1. Open your favourite terminal <sup>[1](#footnote1)</sup>
 1. Download the `get-pip.py` file using the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 1. Run the following `python get-pip.py`
-1. Check pip version using `pip3 -V`
+1. Check pip version using `pip -V`. you should see "pip 20.0.2"
 
-## Mac OS X Setup
 
-No supported due to 3D Space Cadet Pinball not available.
+###  __Create Virtual Python Environment__
 
-## Ubuntu Setup
-
-No supported due to 3D Space Cadet Pinball not available.
-
-## Windows Setup
-
-1. Open Command Prompt with 'Run as Administrator' rights.
+1. Open your favourite terminal<sup>[1](#footnote1)</sup> 
 1. Create a folder where the virtual environments will reside `md python-envs`
 1. To create a new environment named `pinball-env` execute `python -m venv python-envs\pinball-env`
 1. To activate the environment execute `python-envs\pinball-env\Scripts\activate`
-1. Verify pip version is the same as in the __Installing Pip__ section. In case it is not the
-latest, upgrade to the latest pip version using `pip install --upgrade pip`
-1. Install ML-Agents package using `pip install mlagents==0.12.0`
+1. Verify pip version is the same as in the __Install Pip__ section. 
+    - If you don't have the latest pip in the virutal envornment, you can upgrade it by executing `python -m pip install --upgrade pip`
+1. Install ML-Agents package using `pip install mlagents==0.12.0` <sup>[2](#footnote2)</sup>
 1. To deactivate the environment execute `deactivate`
 
-Note:
-- Verify that you are using Python 3.6. Launch a command prompt using `cmd` and
- execute `python --version` to verify the version.
-- Python3 installation may require admin privileges on Windows.
-- This guide is for Windows 10 using a 64-bit architecture only.
+## Finish
 
-### Troubleshooting
+You're now ready to start [Training][training] the pinball machine.
 
-We have occassionally observed the following issue when following the above setup steps:
+<!-- Footnotes -->
+<hr/>
 
-#### Updating PIP in the virtual environment throws exception
+<a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal]. 
 
-You may get a `PermissionError: [WinError 5] Access is denied: <path to pip.exe>` when upgrading PIP from Step 5. 
-
-[![pip Permissions Error](./imgs/pip_error_sm.png)](./imgs/pip_error.png)
-
-Run the upgrade command again to verify that PIP has been successfully upgraded.
-
-
-#### Incompatible Setup Tools
-
-You may get an error when installing ml-agents `you'll have steuptools 28.8.0 which is incompatible` for multiple dependencies.
-
-[![Incompatible Packages Error](./imgs/Incompatible_Packages_sm.png)](./imgs/Incompatible_Packages.png)
-
-This means that you likely have installed a version of MLAgents newer than version `0.12.0`. Ensure that you have specifed the correct version of ml-agents to be installed.
+<a name="footnote2">2</a>: You must use version 0.12.0 of ML-Agents.
 
 
 
-## Unity Setup
-BARRACUDA PACKAGE DEPENDENCY:
-
-ML-Agents version 0.12 takes a dependency on the "Barracuda" package in the Unity Package Manager. If you do not install this, ML-Agents will not work and you will get a lot of error messages.
-
-To fix this:
-1. In the top menu, go to "Window" > "Package Manager"
-1. Click "Advanced" and choose "Show preview packages"
-1. Find and click on the "Barracuda" package 0.3.2
-1. Click "Install" and allow the installation to complete
+<!-- Links -->
+[pythonVirtualEnvironments]: https://docs.python.org/3/library/venv.html "Python Virtual Environments Documentation"
+[pythonDownload]: https://www.python.org/downloads/release/python-362/ "Download Python 3.6"
+[powershell]: https://docs.microsoft.com/en-au/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7 "Install Powershell on Windows"
+[windowsTerminal]: https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab "Windows Terminal"
+[training]: ./Training-ML-Agents.md "Training tutorial" 

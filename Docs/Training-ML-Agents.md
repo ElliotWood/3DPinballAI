@@ -4,36 +4,29 @@
 - Currently the PinballAgent can only read the score when Windows is set to 100% scale when training. 
 - The 3D Space Cadet Window must be in focus during training, with no windows overlapping it.
 
-## Training with mlagents-learn
+## Start Training
 
-Use the `mlagents-learn` command to train agents. See ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md)) if not yet installed.
+1. Open Unity, and open the 3DPinballAI project
+1. In the Project pane, select Assets > Scenes > main
+1. Build the project by selecting File > Build Settings > Build - ensuring the project builds correctly.
+1. Open your favourite terminal <sup>[1](#footnote1)</sup>
+1. Activate your [virtual Python environment][virtualEnvironment] by running `.\python-envs\pinball-env\Scripts\activate` <sup>[2](#footnote2)</sup>
+1. Start the training by running `mlagents-learn <PATH_TO_PROJECT>\3DPinballAI\Assets\Config\trainer_config.yaml --run-id=FirstRun --train`
 
-Open the Unity Editor, this will be required when a training session is opened.
+    - the `trainer_config.yaml` specifies parameters the training algorithm will use.
+    - the `run-id` parameter can be named anything you like, this is specified so you can save, and reload different training runs later.
 
-Run `mlagents-learn` from the command line to launch the training process. Use
-the command line patterns and the `config/trainer_config.yaml` file to control
-training options.
+7. ml-agents will execute and prompt you to press play in Unity
+    - `INFO:mlagents.envs:Start training by pressing the Play button in the Unity Editor.`
+8. Press play the Play button in Unity
+9. A new 3D Pinball game will start.
+10. The 3D Pinball window needs to stay focused and in the foreground with no other windows overlapping it.
+11. Sit back and watch as the Training attempts to figure out how to play.
 
-The basic command for training is:
-```
-mlagents-learn 3DPinballAI/Assets/Config/trainer_config.yaml --run-id=FirstRun --train
-```
+You should end up with somthing that looks like this:
 
-or
+[![View of the desktop when everything is running](./imgs/desktop_view_sm.png)](./imgs/desktop_view.png)
 
-```
-mlagents-learn <trainer-config-file> --env=<env_name> --run-id=<run-identifier> --train
-```
-where
-
-* `<trainer-config-file>` is the file path of the trainer configuration yaml.
-* `<env_name>`__(Optional)__ is the name (including path) of your Unity
-  executable containing the agents to be trained. If `<env_name>` is not passed,
-  the training will happen in the Editor. Press the :arrow_forward: button in
-  Unity when the message _"Start training by pressing the Play button in the
-  Unity Editor"_ is displayed on the screen.
-* `<run-identifier>` is an optional identifier you can use to identify the
-  results of individual training runs.
 
 ### Monitoring Training 
 
@@ -62,7 +55,7 @@ While this example used the default training hyperparameters, you can edit the
 different values.
 
 ### Command Line Training Options
--[See command-line-training-options](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-ML-Agents.md#command-line-training-options)
+-[See command-line-training-options][commandLineTrainingOptions]
 
 ### Debugging and Profiling
 If you enable the `--debug` flag in the command line, the trainer metrics are logged to a CSV file
@@ -73,3 +66,15 @@ stored in the `summaries` directory. The metrics stored are:
   * time for last experience collection
   * number of experiences used for training
   * mean return
+
+
+  <!-- Footnotes -->
+<hr/>
+
+<a name="footnote1">1</a>: You can use the Command Prompt, [Powershell][powershell] or [Windows Terminal][windowsTerminal].
+
+<a name="footnote2">2</a>: If you used different folder names in the Virtual Environment Setup, you'll need to use those instead. 
+
+<!-- links -->
+[virtualEnvironment]: Docs/Using-Virtual-Environment.md "Virtual Python Environment instructions"
+[commandLineTrainingOptions]: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-ML-Agents.md#command-line-training-options "Command line training options for ML-Agents"
