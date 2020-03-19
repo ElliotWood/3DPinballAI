@@ -2,8 +2,7 @@
 <img src="Docs/imgs/Pinball.png" align="middle" width="600"/>
 
 3D Space Cadet Pinball - Deep Reinforcement Learning is an open-source
-example of create an AI in .Net using ([Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)) and a game (['3D Space Cadet Pinball'](https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/)), to serve as a learning environment for
-training intelligent agents to play pinball without supervision.
+example of create an AI in .Net using ([Unity ML-Agents][unityMlAgents]) and a game (['3D Space Cadet Pinball'][spaceCadetPinball]), to serve as a learning environment for training intelligent agents to play pinball without supervision.
 
 The Pinball agent is rewarded by the score going up, and all actions and frames that lead to a higher score are remembered. Initially the actions will be random (using a curiosity model) but over time the agent will choose actions that lead to the highest reward (score).
 
@@ -13,8 +12,8 @@ The Pinball agent is rewarded by the score going up, and all actions and frames 
 - (TODO:) Fix scaling limitation.
 
 ## Prerequistes
-- Download and install (['3D Space Cadet Pinball'](https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/))
-- Download and install ([Unity (2019.2.10f1)](https://unity3d.com/get-unity/download))
+- Download and install (['3D Space Cadet Pinball'][spaceCadetPinball])
+- Download and install ([Unity (2019.2.10f1)][unity])
 - Setup a ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md))
 
 ## Training the PinballAgents
@@ -39,7 +38,12 @@ To change a display scaling size using the recommended settings, use these steps
 <img src="Docs/imgs/change-scaling-settings-windos-10.jpg" align="middle" width="1183"/>
 
 ## Additional Resources
-* [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)
+* [Unity ML-Agents][unityMlAgents]
+
+
+## Credit
+Initial conceptm and code developed by [Elliot Wood][elliotGithub]
+
 
 ## Community and Feedback
 
@@ -47,10 +51,16 @@ This is an open-source project and we encourage and welcome
 contributions. Please add detail when submitting new feature branches.
 
 If you run into any problems using this project,
-[submit an issue](https://github.com/ElliotWood/3DPinballAI/issues) and
+[submit an issue][submitIssue] and
 make sure to include as much detail as possible.
 
 ## License
 [Apache License 2.0](LICENSE)
 
 
+<!-- Links -->
+[elliotGithub]: https://github.com/ElliotWood "Elliot's GitHub"
+[submitIssue]: https://github.com/ElliotWood/3DPinballAI/issues "Submit an issue"
+[unityMlAgents]: https://github.com/Unity-Technologies/ml-agents "Unity ML Agents GitHub repo"
+[spaceCadetPinball]: https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/ "Space Cadet Pinball"
+[unity]: https://unity3d.com/get-unity/download "Download Unity"
