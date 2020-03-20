@@ -3,7 +3,7 @@
 ## Install Unity
 1. Download and install [Unity Hub][unityHub] if you don't have it already.
 2. Run Unity Hub, and select the Projects tab
-3. Click app and select the location of this Project
+3. Click "ADD" and select the location of this Project
 4. If you don't already have Unity 2019.2.10f1 installed, selecting the project will prompt you to install it. - Click install if required.
 
 ![Unity Hub Project screen with Installation promp](./imgs/unity_hub_project.png)
