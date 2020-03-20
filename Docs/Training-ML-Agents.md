@@ -9,9 +9,10 @@
 1. Open Unity, and open the 3DPinballAI project
 1. In the Project pane, select Assets > Scenes > main
 1. Build the project by selecting File > Build Settings > Build - ensuring the project builds correctly.
+    1. When asked for a folder, select the folder where you placed the project.
 1. Open your favourite terminal <sup>[1](#footnote1)</sup>
 1. Activate your [virtual Python environment][virtualEnvironment] by running `.\python-envs\pinball-env\Scripts\activate` <sup>[2](#footnote2)</sup>
-1. Start the training by running `mlagents-learn <PATH_TO_PROJECT>\3DPinballAI\Assets\Config\trainer_config.yaml --run-id=FirstRun --train`
+1. Start the training by running `mlagents-learn <PATH_TO_PROJECT>\Assets\Config\trainer_config.yaml --run-id=FirstRun --train`
 
     - the `trainer_config.yaml` specifies parameters the training algorithm will use.
     - the `run-id` parameter can be named anything you like, this is specified so you can save, and reload different training runs later.
