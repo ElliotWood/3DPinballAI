@@ -13,8 +13,7 @@ The Pinball agent is rewarded by the score going up, and all actions and frames 
 
 ## Prerequistes
 - Download and install (['3D Space Cadet Pinball'][spaceCadetPinball])
-- Download and install ([Unity (2019.2.10f1)][unity])
-- Ensure [Baracuda Package Manager][barracuda] is installed in Unity
+- Download, install and configure ([Unity][unity])
 - Setup a ([Python 3.6 Virtual Environment](Docs/Using-Virtual-Environment.md))
 
 ## Training the PinballAgents
@@ -64,5 +63,4 @@ make sure to include as much detail as possible.
 [submitIssue]: https://github.com/ElliotWood/3DPinballAI/issues "Submit an issue"
 [unityMlAgents]: https://github.com/Unity-Technologies/ml-agents "Unity ML Agents GitHub repo"
 [spaceCadetPinball]: https://www.groovypost.com/howto/windows-7-3d-pinball-space-cadet-game/ "Space Cadet Pinball"
-[unity]: https://unity3d.com/get-unity/download "Download Unity"
-[barracuda]: ./Docs/barracuda.md "Barracuda package manager install instructions"
+[unity]: ./Docs/unity-setup.md "Unity Setup Instructions"
